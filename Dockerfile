@@ -9,6 +9,8 @@ RUN tar xvzf docker-gen-alpine-linux-amd64-0.7.1.tar.gz
 WORKDIR /
 
 COPY entrypoint.sh entrypoint.sh
+COPY nginx.conf.tpl /etc/nginx/nginx.conf.tpl
+
 RUN chmod 777 /entrypoint.sh
 
 ENV DOCKER_HOST unix:///tmp/docker.sock

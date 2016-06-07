@@ -1,12 +1,12 @@
 
 
 lb:
-  image: dgarros/nginx-confd
+  image: dgarros/nginx-udp
   links:
    - opennti-input-syslog
   volumes:
    - /var/run/docker.sock:/tmp/docker.sock:ro
-   - $PWD/nginx.conf.tpl:/etc/nginx/nginx.conf.tpl:ro
+   # - $PWD/nginx.conf.tpl:/etc/nginx/nginx.conf.tpl:ro
   environment:
    - "SERVICES_LB=6000"
   ports:

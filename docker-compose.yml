@@ -1,16 +1,5 @@
-# nginx-udp
-NGINX Load Balancer packaged with docker-gen for docker-compose
 
-The configuration is generated dynamically on the fly and is based on environment variables both on LB and Server side
 
-On NGINX, you need to define the variable : SERVICES_LB
-On Servers, you need to define the variable : SERVICES_CLIENT
-
-Both can be single value or list of value separated with `,`
-
-# Here is an example of docker-compose file
-
-```yaml
 lb:
   image: dgarros/nginx-confd
   links:
@@ -33,4 +22,3 @@ opennti-input-syslog:
    - "6000/udp"
   volumes:
    - /etc/localtime:/etc/localtime
-```
